@@ -75,8 +75,8 @@ app.post('/login', async (req, res) => {
         res.status(401).json({
             message: "Login unsuccessful",
             error: "User not found",
-    });
-}
+        });
+    }
 });
 
 app.get('/profile', (req, res) => {
@@ -232,4 +232,8 @@ app.get('/addresses', async (req, res) => {
     };
 });
 
-app.listen(3000);
+if (process.env.API_PORT) {
+    app.listen(process.env.API_PORT);
+}
+
+module.exports = app;
