@@ -13,8 +13,9 @@ import PlacePage from './pages/PlacePage';
 import BookingPage from './pages/BookingPage';
 import BookingsPage from './pages/BookingsPage';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:3000/';
 axios.defaults.withCredentials = true;
+
 function App() {
 
   return (
