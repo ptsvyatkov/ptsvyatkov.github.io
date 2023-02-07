@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +9,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import App from './App';
 import './index.css'
+import { BrowserRouter, Navigate } from 'react-router-dom';
 
 
 i18n
@@ -30,10 +31,14 @@ i18n
     }
   });
 
+  
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Suspense fallback={<h2>Loading...</h2>}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
   </Suspense>
 )
