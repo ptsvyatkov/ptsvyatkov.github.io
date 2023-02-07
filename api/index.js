@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(path.join(__dirname + '/uploads')))
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: 'https://tourjourney.vercel.app/'
 }));
 
 mongoose.connect(process.env.MONGO_URL);
