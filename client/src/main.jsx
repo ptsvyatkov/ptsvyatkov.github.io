@@ -10,8 +10,9 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import App from './App';
 import './index.css'
 import { BrowserRouter, Navigate } from 'react-router-dom';
-
-
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3000/';
+axios.defaults.withCredentials = true;
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
