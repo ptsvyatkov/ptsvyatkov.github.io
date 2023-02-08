@@ -128,7 +128,7 @@ app.post('/upload', photosMiddleware.array('photos', 50), (req, res) => {
 });
 
 // API Endpoint to create a new place
-app.post('/places', (req, res, next) => {
+app.post('/places', (req, res) => {
     const { token } = req.cookies;
 
     const {
@@ -150,7 +150,6 @@ app.post('/places', (req, res, next) => {
         });
         res.json(placeDoc);
     });
-    next();
 });
 
 // API Endpoint to get all places of a selected user
