@@ -34,7 +34,7 @@ export default function BookingWidget({ place }) {
         if (!user) {
             return;
         }
-        const response = await axios.post('bookings', {
+        const response = await axios.post('/bookings', {
             user, checkIn, checkOut, numberOfGuests, name, phone,
             place: place._id,
             price: numberOfNights * place.price

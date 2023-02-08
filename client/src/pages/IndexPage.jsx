@@ -26,7 +26,7 @@ export default function IndexPage() {
     useEffect(() => {
         setLoading(true);
         const fetchPlaces = async () => {
-            const res = await axios.get(`http://localhost:3000/addresses/?q=${query}`);
+            const res = await axios.get(`/addresses/?q=${query}`);
             setData(res.data);
         };
         setLoading(false);
@@ -38,7 +38,7 @@ export default function IndexPage() {
     // }, [places, query])
 
     const buttonFetchPlaces = async (e) => {
-        const res = await axios.get(`http://localhost:3000/addresses/?q=${query}`);
+        const res = await axios.get(`/addresses/?q=${query}`);
         setData(res.data);
     }
 
