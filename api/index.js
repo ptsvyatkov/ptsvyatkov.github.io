@@ -66,7 +66,7 @@ app.post('/login', async (req, res) => {
                 id: userDoc._id
             }, JWT_SECRET, {}, (err, token) => {
                 if (err) throw err;
-                res.cookie('token', token).json(userDoc);
+                res.cookie('token', token, { sameSite: 'none', secure: true }).json(userDoc);
             });
         } else {
             res.status(422).json('Password not matched');
@@ -93,7 +93,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/logout', (req, res) => {
-    res.cookie('token', '').json(true);
+    res.cookie('token', '', { sameSite: 'none'}).json(true);
 });
 
 app.post('/upload-by-link', async (req, res) => {
