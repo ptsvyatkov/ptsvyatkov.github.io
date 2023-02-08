@@ -22,7 +22,7 @@ const JWT_SECRET = 'jwtsecrettest333';
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname + '/uploads')))
+app.use(express.static((__dirname + '/uploads')))
 app.use(cors({
     credentials: true,
     origin: 'https://tourjourney.vercel.app'
@@ -37,6 +37,9 @@ function getUserDataFromReq(req) {
             if (err) throw err;
             resolve(userData);
         });
+    }).catch(err => {
+        err.status = 401;
+        err.message = 'Invalid token';
     });
 }
 
@@ -118,7 +121,7 @@ app.post('/upload', photosMiddleware.array('photos', 50), (req, res) => {
         const ext = parts[parts.length - 1];
         const newPath = path + '.' + ext;
         fs.renameSync(path, newPath);
-        uploadedFiles.push(newPath.replace('uploads\\', ''));
+        uploadedFiles.push(newPath.replace('/uploads', ''));
     }
     res.json(uploadedFiles);
 });
