@@ -6,6 +6,6 @@ export default function PlaceImg({ place, index=0, className=null }) {
         className = 'object-cover'
     }
     return (
-        <img className={className} src={'https://apitourjourney.onrender.com/' + place.photos[index]} alt={place.title} /> // display the first photo
+        <img className={className} src={'https://apitourjourney.onrender.com/uploads/' + place.photos[index]} alt={place.title} /> // display the first photo
     );
 }

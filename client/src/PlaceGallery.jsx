@@ -21,7 +21,7 @@ export default function PlaceGallery({place}){
                     </div>
                     {place?.photos?.length > 0 && place.photos.map(photo => (
                         <div>
-                            <img src={'https://apitourjourney.onrender.com/' + photo} key={photo}  alt={photo.title} />
+                            <img src={'https://apitourjourney.onrender.com/uploads/' + photo} key={photo}  alt={photo.title} />
                         </div>
                     ))}
                 </div>
@@ -35,17 +35,17 @@ export default function PlaceGallery({place}){
                     <div>
                         {place.photos?.[0] && (
                             <div className="">
-                                <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover" src={'https://apitourjourney.onrender.com/' + place.photos?.[0]} alt={place.title} />
+                                <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover" src={'https://apitourjourney.onrender.com/uploads/' + place.photos?.[0]} alt={place.title} />
                             </div>
                         )}
                     </div>
                     <div className="grid">
                         {place.photos?.[1] && (
-                            <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover" src={'https://apitourjourney.onrender.com/' + place.photos?.[1]} alt={place.title} />
+                            <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover" src={'https://apitourjourney.onrender.com/uploads/' + place.photos?.[1]} alt={place.title} />
                         )}
                         <div className="border border-red-600 overflow-hidden">
                             {place.photos?.[2] && (
-                                <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover relative top-2" src={'https://apitourjourney.onrender.com/' + place.photos?.[2]} alt={place.title} />
+                                <img onClick={() => setShowAllPhotos(true)} className="cursor-pointer aspect-square object-cover relative top-2" src={'https://apitourjourney.onrender.com/uploads/' + place.photos?.[2]} alt={place.title} />
                             )}
                         </div>
                     </div>
