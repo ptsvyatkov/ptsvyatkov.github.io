@@ -22,7 +22,7 @@ const JWT_SECRET = 'jwtsecrettest333';
 
 app.use(express.json());
 app.use(cookieParser());
-app.use('/uploads', express.static(path.join(__dirname + '/uploads')))
+app.use(express.static(path.join(__dirname + '/uploads')))
 app.use(cors({
     credentials: true,
     origin: 'https://tourjourney.vercel.app'
@@ -124,7 +124,7 @@ app.post('/upload', photosMiddleware.array('photos', 50), (req, res) => {
 });
 
 // API Endpoint to create a new place
-app.post('/places', (req, res) => {
+app.post('/places', (req, res, next) => {
     const { token } = req.cookies;
 
     const {
@@ -146,6 +146,7 @@ app.post('/places', (req, res) => {
         });
         res.json(placeDoc);
     });
+    next();
 });
 
 // API Endpoint to get all places of a selected user
