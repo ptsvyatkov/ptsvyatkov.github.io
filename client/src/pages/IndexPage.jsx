@@ -89,7 +89,7 @@ export default function IndexPage() {
                     <Link to={'/place/' + place._id} key={index}>
                         <div className="bg-gray-500 mb-2 rounded-2xl flex">
                             {place.photos?.[0] && (
-                                <img className="rounded-2xl object-cover aspect-square" src={'http://localhost:3000/uploads/' + place.photos?.[0]} alt={place.title} />
+                                <img className="rounded-2xl object-cover aspect-square" src={'https://apitourjourney.onrender.com/' + place.photos?.[0]} alt={place.title} />
                             )}
                         </div>
                         <h2 className="font-bold ml-1 mb-0.5">{place.address}</h2>
@@ -122,7 +122,7 @@ export default function IndexPage() {
                     <Link to={'/place/' + place._id} key={index}>
                         <div className="bg-gray-500 mb-2 rounded-2xl flex">
                             {place.photos?.[0] && (
-                                <img className="h-[22rem] grow rounded-2xl object-cover aspect-square" src={'http://localhost:3000/uploads/' + place.photos?.[0]} alt={place.title} />
+                                <img className="h-[22rem] grow rounded-2xl object-cover aspect-square" src={'https://apitourjourney.onrender.com/' + place.photos?.[0]} alt={place.title} />
                             )}
                         </div>
                         <h2 className="font-bold">{place.address}</h2>
