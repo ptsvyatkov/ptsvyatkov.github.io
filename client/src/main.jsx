@@ -10,7 +10,6 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-
 axios.defaults.baseURL = 'https://apitourjourney.onrender.com';
 axios.defaults.withCredentials = true;
 i18n
