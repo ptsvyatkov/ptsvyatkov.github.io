@@ -101,11 +101,13 @@ app.post('/logout', (req, res) => {
 
 app.post('/upload-by-link', async (req, res) => {
     const { link } = req.body;
+    console.log(req.body);
+    console.log(link);
     const newName = 'photo' + Date.now() + '.jpg';
     await imageDownloader.image({
-        url: link,
-        dest: __dirname + newName
-    });
+        url: "https://apitourjourney.onrender.com",
+        dest: "/uploads/" + newName
+    }).catch((err) => console.error(err));;
     
     res.json(newName);
 });
@@ -121,7 +123,9 @@ app.post('/upload', photosMiddleware.array('photos', 50), (req, res) => {
         const parts = originalname.split('.');
         const ext = parts[parts.length - 1];
         const newPath = path + '.' + ext;
+        console.log(newPath);
         fs.renameSync(path, newPath);
+        console.log(newPath);
         uploadedFiles.push(newPath.replace('/uploads', ''));
     }
     res.json(uploadedFiles);
