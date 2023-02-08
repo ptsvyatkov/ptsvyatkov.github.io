@@ -22,7 +22,7 @@ const JWT_SECRET = 'jwtsecrettest333';
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static((__dirname + '/uploads')))
+app.use('/uploads', express.static(path.join(__dirname + '/uploads')))
 app.use(cors({
     credentials: true,
     origin: 'https://tourjourney.vercel.app'
@@ -37,9 +37,6 @@ function getUserDataFromReq(req) {
             if (err) throw err;
             resolve(userData);
         });
-    }).catch(err => {
-        err.status = 401;
-        err.message = 'Invalid token';
     });
 }
 
@@ -101,14 +98,11 @@ app.post('/logout', (req, res) => {
 
 app.post('/upload-by-link', async (req, res) => {
     const { link } = req.body;
-    console.log(req.body);
-    console.log(link);
     const newName = 'photo' + Date.now() + '.jpg';
     await imageDownloader.image({
-        url: "https://apitourjourney.onrender.com",
-        dest: "/uploads/" + newName
-    }).catch((err) => console.error(err));;
-    
+        url: link,
+        dest: __dirname + '\\uploads\\' + newName
+    });
     res.json(newName);
 });
 
@@ -123,10 +117,8 @@ app.post('/upload', photosMiddleware.array('photos', 50), (req, res) => {
         const parts = originalname.split('.');
         const ext = parts[parts.length - 1];
         const newPath = path + '.' + ext;
-        console.log(newPath);
         fs.renameSync(path, newPath);
-        console.log(newPath);
-        uploadedFiles.push(newPath.replace('/uploads', ''));
+        uploadedFiles.push(newPath.replace('uploads\\', ''));
     }
     res.json(uploadedFiles);
 });
