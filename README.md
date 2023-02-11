@@ -1,11 +1,9 @@
 To install the neccessary dependencies:
-1. Clone the repository
-2. cd api
-3. yarn install
-4. cd ..
-5. cd client
-6. yarn install
+Navigate to api folder and run yarn install
+Navigate to client and run yarn install
 
-To start the application
-cd api and then execute yarn start or node index.js
-cd client and execute yarn dev
+After that to start the project 
+in api folder, yarn start
+in client folder yarn dev
+
+
