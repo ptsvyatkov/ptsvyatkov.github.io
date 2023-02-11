@@ -7,5 +7,5 @@ To install the neccessary dependencies:
 6. yarn install
 
 To run the application:
-cd api -> yarn start or node index.js
-cd client yarn dev
+cd api and then execute yarn start or node index.js
+cd client and execute yarn dev
