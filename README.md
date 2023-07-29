@@ -16,7 +16,7 @@ The Tourjourney applicatiion is created using the MERN (MongoDB, Express, React,
 
 ### Running the project
 From the root folder:
-- cd api -> execute yarn start
-- cd client -> execute yarn dev
+- cd api -> yarn start
+- cd client -> yarn dev
 
 
