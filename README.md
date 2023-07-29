@@ -7,7 +7,7 @@ The goal of the project was the conception and development of an interactive apa
 
 Before beginning with the development, interviews with experts on the topic were conducted, from which functional and non-functional requirements were outlined. According to these a prototype was created and heuristically evaluated by German and Bulgarian users.
 
-The Tourjourney applicatiion is created using the MERN (MongoDB, Express, React, Node.js) stack.  React-i18next was utilized in order to internationalize the web application for German and Bulgarian as well as English as a fallback language.
+The Tourjourney applicatiion is created using the MERN (MongoDB, Express, React, Node.js) stack. <br> React-i18next was utilized in order to internationalize the web application for German and Bulgarian as well as English as a fallback language.
 
 ### Getting started
 - Clone the repository on your machine
@@ -15,7 +15,8 @@ The Tourjourney applicatiion is created using the MERN (MongoDB, Express, React,
 - Navigate to client folder and run yarn install
 
 ### Running the project
-- While in the api folder execute yarn start
-- While in the client folder execute yarn dev
+From the root folder:
+- cd api -> execute yarn start
+- cd client -> execute yarn dev
 
 
