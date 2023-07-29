@@ -1,7 +1,7 @@
 ### Tourjourney project.
-This was my thesis project in my final semester of my Bachelor studies in 2022/2023. (BSc. CS, International Media and Computing)
+This was my **thesis project** in my final semester of my Bachelor studies in 2022/2023. (BSc. CS, International Media and Computing)
 
-The topic of my thesis is "Conception, implementation and evaluation of the internationalisation of a web application" and the following research question was posed: "How does internationalization affect the usability of web application systems?"
+The topic of my thesis was **"Conception, implementation and evaluation of the internationalisation of a web application"** and the following research question was posed: "How does internationalization affect the usability of web application systems?"
 
 The goal of the project was the conception and development of an interactive apartment booking web application localized for the Bulgarian and German speaking region in order to evaluate if there are differences in the user interaction and web preferences regarding both cultures. 
 
@@ -17,6 +17,5 @@ The Tourjourney applicatiion is created using the MERN (MongoDB, Express, React,
 ### Running the project
 - While in the api folder execute yarn start
 - While in the client folder execute yarn dev
-- 
 
 
