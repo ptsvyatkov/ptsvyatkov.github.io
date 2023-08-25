@@ -1,5 +1,5 @@
 ### Tourjourney project
-This was my **thesis project** in my final semester of my Bachelor studies in 2022/2023. (BSc. CS, International Media and Computing)
+Final semester **thesis project** of my Bachelor studies in 2022/2023. (B.Sc. in Computer Science, International Media and Computing)
 
 The topic of my thesis was **"Conception, implementation and evaluation of the internationalisation of a web application"** and the following research question was posed: "How does internationalization affect the usability of web application systems?"
 
